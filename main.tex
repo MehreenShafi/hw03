@@ -65,21 +65,21 @@ All sets carry data, but how much information can be extracted from it? Consider
   \begin{solution}
     % Write your solution here
     
-    There are three possibilites for an anti-symmetric set,
+    There are three possibilities for an anti-symmetric set,
     \begin{itemize}
         \item  Only $(x,y)$ is present
         \item  Only  $(y,x)$ is present
         \item  Neither are present
     \end{itemize}
 
-    Thus, the condition of antisymmetric set becomes,
+    Thus, the condition of anti-symmetric set becomes,
     
     $|A| = $ $ {}^n {C_3} $
     
     $|A| = $ $ 3^\frac{{n^2} - n}{2}$
     
     
-    Thus without refekxive relations the expression becomes,
+    Thus without reflexive relations the expression becomes,
     
     $ |A|=$ $ (2^n-1 ) . (3^\frac{{{n^2} - n}}{2})$
     
@@ -112,13 +112,15 @@ All sets carry data, but how much information can be extracted from it? Consider
 
 \end{parts}
 
-\question Let $R$ be a relation from $A$ to $B$. Then the inverse of $R$, written $R^{-1}$, is a relation from $B$ to $A$ defined by $R^{-1} = \{(y,x) \in B \times A \:|\: (x,y) \in R\}$. Prove that $R$ is symmetric iff $R = R^{-1}$.
+\question Let $R$ be a relation from $A$ to $B$. Then the inverse of $R$, written $R^{-1}$, is a relation from $B$ to $A$ defined by $R^{-1} = \{(y,x) \in B \times A \:|\: (x,y) \in R\}$. Prove that $R$ is symmetric if $R = R^{-1}$.
 
   \begin{solution}
     % Write your solution here
     
-    If $R = R^-1$ then this means that if,
-    \\ $(x,y) \in R$ $\rightarrow (y,x) \in R^-1$ 
+    $\implies$ $R$ and $R^{-1}$ are equal    
+     \\ $(x,y) \in R$ $\rightarrow (y,x) \in R^{-1}$    
+    \\If $R = R^{-1}$ then this means that , for every element
+    that is in $R$, its inverse is in $R^{-1}$, which is also in are because they are equal.
     
     Thus, this proves that $R$ is symmetric
     
@@ -144,22 +146,28 @@ All sets carry data, but how much information can be extracted from it? Consider
     If both are reflexive, then their union will also contain the reflexive relations of all elements of R as well as S, thus it will also be reflexive.
     
     \part False. 
-    $(a,b) \in R$ $\wedge$
+    $\{(a,b) \in R$ $\wedge$
     $(b,c) \in S$
-    $\rightarrow (a,c) \in R \circ S $
+    $\rightarrow (a,c) \in R \circ S \}$
     
     If R and S are anti-symmetric, then $R \circ S $ becomes symmetric
-    \\$R = {(2,5),(3,4)} $
-    \\$S = {(2,3),(4,5)}$
-    \\$R \circ S = {(2,4),(4,2)}$
+    \\$R = \{(2,5),(3,4)\} $
+    \\$S = \{(2,3),(4,5)\}$
+    \\$R \circ S = \{(2,4),(4,2)\}$
     
-    \part True. If both are symmetric, their intersection will also include the symmetric elements.
+    \part True. If both are symmetric, their intersection will also include the symmetric elements thus it will also be symmetric.
     
-    \part True. If $(x,y) \in R$ $\rightarrow (y,x) \in R^-1$
+    \part True. If $(x,y) \in R$ $\rightarrow (y,x) \in R^{-1}$
     If R is reflexive $x=y$
     Thus, there is at least one element in $R$ which is also in $R^-1$
     
-    \part True
+    \part True. 
+    If R is transitive,
+    $\{( (a,b) \in R \wedge (b,c) \in R) \rightarrow ((a,c) \in R)\}$
+    It's inverse would be
+    $\{( (c,b) \in R^{-1} \wedge (b,a) \in R^{-1}) \rightarrow ((c,a) \in R^{-1})\}$
+    which is also transitive.
+    
     \end{parts}
   \end{solution}
   
@@ -173,7 +181,7 @@ All sets carry data, but how much information can be extracted from it? Consider
     Let us check that the statement is true for $n=1$, i.e.,
     
     There is a path from $a$ to $b$ in $R^1$, which means that
-    $(a,b) \epsilon R^1$
+    $\{(a,b) \in R^1\}$
     
     As this is proven true by definition, we now assume that it is also true for $n = k$
     
@@ -199,6 +207,47 @@ Thus, if it is true for $n = k+1$ then it is true for $n= k$ which means that it
     
       \begin{solution}
     % Write your solution here
+    
+    For a relation to be equivalent, it must fulfill three conditions, i.e it must be a
+    
+    \begin{itemize}
+    
+    \item Reflexive Relation
+    
+    \item Symmetric Relation
+    
+    \item Transitive Relation
+    
+    
+    
+    
+    \end{itemize}
+    
+    To start with, $\rho (R)$ is a reflexive relation which implies that
+    
+     $\phi(\rho(R))$ and $\tau(\phi(\rho(R)))$ are also reflexive, due to their domain being reflexive.
+     
+      If $(a,b) \in R \rightarrow (b,a) \in R^{-1}$ and as $\phi (R)$ is a union of both, it contains both relations and thus is a symmetric set which makes
+     $\tau(\phi(\rho(R)))$ also symmetric.
+    
+    
+    A relation can be proved transitive by the following theorem,
+    
+    $R \subseteq R^n$ \\
+    
+    where $R^n = R^1 \cup R^2 \cup R^3... R^n$
+    
+    
+    By definiton,
+     $\tau (R) = \cup \{ R^n | n = 1,2,3,...\}$ that is $R \subseteq R^n$ 
+     
+    Thus,  $\tau(\phi(\rho(R)))$ is transitive.
+    
+    
+    As all three conditions have been met, we can conclude that  $\tau(\phi(\rho(R)))$ is an equivalent relation.
+     
+    \textbf{Hence Proved!}
+    
     
   \end{solution}
 
